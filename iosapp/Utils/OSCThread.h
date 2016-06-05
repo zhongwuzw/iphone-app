@@ -11,5 +11,6 @@
 @interface OSCThread : NSObject
 
 + (void)startPollingNotice;
++ (void)stopPollingNotice;
 
 @end

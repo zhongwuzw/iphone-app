@@ -28,8 +28,7 @@
 static NSString * const kShowAccountOperation = @"ShowAccountOperation";
 
 
-@interface LoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate,
-                                   TencentSessionDelegate, WeiboSDKDelegate, WXApiDelegate>
+@interface LoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, TencentSessionDelegate, WeiboSDKDelegate, WXApiDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *accountField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
@@ -235,6 +234,10 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
     NSLog(@"请检查网络");
 }
 
+- (void)tencentDidLogout
+{
+    
+}
 
 #pragma mark 微信登录
 

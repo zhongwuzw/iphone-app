@@ -26,7 +26,7 @@
         _author = [[TeamMember alloc] initWithXML:authorXML];
         
         NSString *summaryHTML = [[xml firstChildWithTag:@"summary"] stringValue];
-        NSMutableAttributedString *attributedSummary = [Utils attributedStringFromHTML:summaryHTML];
+        NSMutableAttributedString *attributedSummary = (NSMutableAttributedString *)[Utils attributedStringFromHTML:summaryHTML];
         [attributedSummary deleteCharactersInRange:NSMakeRange(attributedSummary.length-1, 1)];
         [attributedSummary addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
                                            NSForegroundColorAttributeName: [UIColor titleColor]
@@ -40,7 +40,7 @@
         NSMutableArray *mutableDetails = [NSMutableArray new];
         [tags enumerateObjectsUsingBlock:^(NSString *tag, NSUInteger idx, BOOL *stop) {
             NSString *HTML = [detailsXML firstChildWithTag:tag].stringValue;
-            NSMutableAttributedString *attributedDetail = [Utils attributedStringFromHTML:HTML];
+            NSMutableAttributedString *attributedDetail = (NSMutableAttributedString *)[Utils attributedStringFromHTML:HTML];
             
             [attributedDetail addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
                                               NSForegroundColorAttributeName: [UIColor titleColor]

@@ -137,7 +137,7 @@ static BOOL isNight;
     [cell setSelectedBackgroundView:selectedBackground];
     
     cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_QA", @"sidemenu-software", @"sidemenu_blog", @"sidemenu_setting", @"sidemenu-night"][indexPath.row]];
-    cell.textLabel.text = @[@"技术问答", @"开源软件", @"博客区", @"设置", @"夜间模式", @"注销"][indexPath.row];
+    cell.textLabel.text = @[@"技术问答", @"开源软件", @"博客区", @"设置", @"夜间模式"][indexPath.row];
     
     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode){
         cell.textLabel.textColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];

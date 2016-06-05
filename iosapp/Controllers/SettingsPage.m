@@ -12,6 +12,7 @@
 #import "AboutPage.h"
 #import "OSLicensePage.h"
 #import "FeedBackViewController.h"
+#import "OSCThread.h"
 
 #import <RESideMenu.h>
 #import <MBProgressHUD.h>
@@ -120,6 +121,7 @@
         [Config clearProfile];
         [Config removeTeamInfo];
         [Config clearCookie];
+        [OSCThread stopPollingNotice];
         
         NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
         for (NSHTTPCookie *cookie in [cookieStorage cookies]) {

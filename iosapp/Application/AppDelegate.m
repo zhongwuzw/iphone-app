@@ -22,12 +22,7 @@
 #import <UMengSocial/UMSocialWechatHandler.h>
 #import <UMengSocial/UMSocialSinaHandler.h>
 
-@interface AppDelegate () <UIApplicationDelegate>
-
-@end
-
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -72,7 +67,7 @@
                                    [[UIMenuItem alloc] initWithTitle:@"复制" action:NSSelectorFromString(@"copyText:")],
                                    [[UIMenuItem alloc] initWithTitle:@"删除" action:NSSelectorFromString(@"deleteObject:")]
                                    ]];
-    
+
     /************ 检测通知 **************/
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {

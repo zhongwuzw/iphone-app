@@ -177,7 +177,7 @@
         html = [NSString stringWithFormat:@"<span>%@</span>", html]; // DTCoreText treat raw string as <p> element
     }
     NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-    return [[NSAttributedString alloc] initWithHTMLData:data options:@{ DTUseiOS6Attributes: @YES}
+    return [[NSMutableAttributedString alloc] initWithHTMLData:data options:@{ DTUseiOS6Attributes: @YES}
                                      documentAttributes:nil];
 }
 

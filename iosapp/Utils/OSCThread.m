@@ -28,13 +28,17 @@ static Reachability *reachability;
 
 + (void)startPollingNotice
 {
-    if (isPollingStarted) {
-        return;
-    } else {
+    if (!timer) {
         timer = [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(timerUpdate) userInfo:nil repeats:YES];
         reachability = [Reachability reachabilityWithHostName:@"www.oschina.net"];
-        isPollingStarted = YES;
     }
+}
+
++ (void)stopPollingNotice
+{
+    [timer invalidate];
+    timer = nil;
+    reachability = nil;
 }
 
 + (void)timerUpdate
