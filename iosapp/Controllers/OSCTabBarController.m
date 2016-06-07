@@ -304,7 +304,7 @@
     _centerButton.enabled = NO;
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CGRect cropRect = CGRectMake(0, screenSize.height - 270, screenSize.width, screenSize.height);
+    CGRect cropRect = CGRectMake(0, screenSize.height - 270, screenSize.width, 270);
     
     UIImage *originalImage = [self.view updateBlur];
     UIImage *croppedBlurImage = [originalImage cropToRect:cropRect];
@@ -317,7 +317,7 @@
     _dimView = [[UIView alloc] initWithFrame:self.view.bounds];
     _dimView.backgroundColor = [UIColor blackColor];
     _dimView.alpha = 0.4;
-    [self.view insertSubview:_dimView belowSubview:self.tabBar];
+    [self.view insertSubview:_dimView belowSubview:_blurView];
     
     [_blurView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonPressed)]];
     [_dimView  addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonPressed)]];

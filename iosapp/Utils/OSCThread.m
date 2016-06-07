@@ -16,7 +16,6 @@
 #import <Ono.h>
 #import <Reachability.h>
 
-static BOOL isPollingStarted;
 static NSTimer *timer;
 static Reachability *reachability;
 
