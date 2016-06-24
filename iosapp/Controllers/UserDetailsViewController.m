@@ -27,11 +27,6 @@
 
 @property (nonatomic, strong) OSCUser *user;
 
-@property (nonatomic, strong) UIImageView *portrait;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *countLabel;
-@property (nonatomic, strong) UIButton *followButton;
-
 @end
 
 @implementation UserDetailsViewController
